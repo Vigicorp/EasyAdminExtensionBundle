@@ -11,7 +11,7 @@
   {% if action.confirm is defined %}
     {% set confirm = action.confirm|default('confirm_modal.content'|trans(trans_parameters, 'EasyAdminBundle')) %}
   {% endif %}
-  {% if action.template %}
+  {% if action.template != '@EasyAdmin/default/action.html.twig' %}
     {{ include(action.template, {
       action: action,
       action_href: action_href,
